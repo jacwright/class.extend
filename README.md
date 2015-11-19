@@ -9,6 +9,11 @@ harder during debug time to know what objects you're looking at in the logs sinc
 in the display. By requiring the constructor to be defined outside of `extend` you get to keep the name and still
 benefit from static inheritance and the increased code readability `extend` provides.
 
+## Usage
+
+This package is not on NPM. There are enough class systems out there and this is simple enough that you can clone or
+simply copy-paste the code into your own project.
+
 ## Features
 
 * Keeps the class name by requiring the constructor to be defined as a named function
