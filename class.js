@@ -37,7 +37,11 @@ function extend(Subclass /* [, prototype [,prototype]] */) {
   extendStatics(this, Subclass);
 
   prototypes.forEach(function(proto) {
-    if (proto.hasOwnProperty('statics')) extendStatics(proto.statics, Subclass);
+    if (typeof proto === 'function') {
+      extendStatics(proto, Subclass);
+    } else if (proto.hasOwnProperty('static')) {
+      extendStatics(proto.static, Subclass);
+    }
   });
 
   var descriptors = getDescriptors(prototypes);
@@ -53,7 +57,7 @@ function getDescriptors(objects) {
     if (typeof object === 'function') object = object.prototype;
 
     Object.getOwnPropertyNames(object).forEach(function(name) {
-      if (name === 'statics') return;
+      if (name === 'static') return;
 
       var descriptor = Object.getOwnPropertyDescriptor(object, name);
 

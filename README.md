@@ -106,7 +106,7 @@ function SuperClass() {
 }
 
 Class.extend(SuperClass, {
-  statics: {
+  static: {
     type: 'superclass'
   },
 
@@ -120,7 +120,7 @@ function MyClass() {
 }
 
 SuperClass.extend(MyClass, {
-  statics: {
+  static: {
     type: 'myclass'
   }
 });
