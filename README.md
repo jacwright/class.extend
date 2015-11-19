@@ -9,7 +9,7 @@ harder during debug time to know what objects you're looking at in the logs sinc
 in the display. By requiring the constructor to be defined outside of `extend` you get to keep the name and still
 benefit from static inheritance and the increased code readability `extend` provides.
 
-### Features
+## Features
 
 * Keeps the class name by requiring the constructor to be defined as a named function
 * Makes prototype members non-enumerable so only instance data is enumerable, easier for debugging as well
@@ -17,11 +17,11 @@ benefit from static inheritance and the increased code readability `extend` prov
 * Inline getters/setters supported in the prototype definitions
 * Multiple inheritance (sort of, not the real deal), or mixins are supported
 
-### Examples
+## Examples
 
 Here are some examples of feature usage.
 
-#### Simple extension
+### Simple extension
 
 ```
 var Class = require('class.extend');
@@ -48,7 +48,7 @@ SuperClass.extend(MyClass, {
 });
 ```
 
-#### Mixins, getters/setters
+### Mixins, getters/setters
 
 ```
 // ...
@@ -69,7 +69,7 @@ SuperClass.extend(MyClass, EventEmitter, {
 });
 ```
 
-Statics
+### Statics
 
 ```
 // ...
